@@ -43,6 +43,8 @@ class Valbn
   end
 
   def exists?(options = {})
+    options[:detail] = options[:formatted]
+
     case @country
     when *EU_COUNTRIES
       if defined?(Valvat) == 'constant'
