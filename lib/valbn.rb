@@ -102,4 +102,13 @@ class Valbn
     result
   end
   alias_method :exist?, :exists?
+
+  def iso_country_code
+    case @country
+    when *EU_COUNTRIES
+      Valvat.new(@number).iso_country_code
+    else
+      @country
+    end
+  end
 end
